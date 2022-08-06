@@ -141,8 +141,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/displaymaxspeed"
@@ -1609,28 +1608,54 @@
 
     <TextView
         android:id="@+id/APWarning"
-        android:drawableLeft="@drawable/ic_autopilot"
-        android:drawablePadding="5dp"
         android:layout_width="300dp"
         android:layout_height="0dp"
-        android:fontFamily="@font/interbold"
-        android:textColor="#cccccc"
-        android:visibility="gone"
+        android:layout_marginTop="40dp"
         android:background="@drawable/rounded_corner"
+        android:drawableLeft="@drawable/ic_autopilot"
+        android:drawablePadding="2dp"
+        android:fontFamily="@font/interbold"
         android:gravity="center|center_vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="5dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="5dp"
         android:text="Apply slight turning force to steering wheel"
         android:textAlignment="center"
+        android:textColor="#cccccc"
         android:textSize="15dp"
-        android:layout_marginTop="24dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="30dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:visibility="gone"
 
 
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/PINWarning"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_corner"
+        android:drawableLeft="@drawable/ic_pin"
+        android:drawablePadding="0dp"
+        android:fontFamily="@font/interbold"
+        android:gravity="center|center_vertical"
+        android:paddingLeft="12dp"
+        android:paddingTop="5dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="5dp"
+        android:text="Enter PIN to Drive\non the main display"
+        android:textAlignment="center"
+        android:textColor="#cccccc"
+        android:textSize="15dp"
+        android:visibility="gone"
+
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

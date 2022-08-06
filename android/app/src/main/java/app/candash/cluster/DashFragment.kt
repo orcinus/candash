@@ -460,7 +460,7 @@ class DashFragment : Fragment() {
                 battAmps1 = battAmps2
                 battAmps2 = battAmps3
                 battAmps3 = battAmps
-                if (battAmps2 > (battAmps1+battAmps2)/2) {
+                if (battAmps2 > (battAmps1+battAmps3)/2) {
                     battAmps = battAmps1
                 } else {
                     battAmps = battAmps2
@@ -701,6 +701,29 @@ class DashFragment : Fragment() {
 
             }
 
+            it.getValue(Constants.PINenabled)?.let { PINenabled ->
+                if (PINenabled == 1f) {
+                    if (viewModel.getValue(Constants.PINpassed) == 0f &&
+                        binding.PINWarning.visibility != View.VISIBLE &&
+                        viewModel.getValue(Constants.brakeApplied) == 2f) {
+                        binding.PINWarning.clearAnimation()
+                        val fadeInWarning = AnimationUtils.loadAnimation(activity, R.anim.fade_in)
+                        binding.PINWarning.startAnimation(fadeInWarning)
+                        binding.PINWarning.visibility = View.VISIBLE
+                    } else if(viewModel.getValue(Constants.PINpassed) == 1f) {
+                        binding.PINWarning.clearAnimation()
+                        val fadeOutWarning = AnimationUtils.loadAnimation(activity, R.anim.fade_out)
+                        if (binding.PINWarning.visibility != View.GONE) {
+                            binding.PINWarning.startAnimation(fadeOutWarning)
+                            binding.PINWarning.visibility = View.GONE
+                        }
+                    }
+                } else {
+                    binding.PINWarning.clearAnimation()
+                    binding.PINWarning.visibility = View.GONE
+                }
+            }
+
             it.getValue(Constants.uiSpeed)?.let { vehicleSpeedVal ->
                 var sensingSpeedLimit = 35
                 binding.speed.scaleY = .9f
@@ -904,7 +927,7 @@ class DashFragment : Fragment() {
             it.getValue(Constants.heatBattery)?.let { heatBatteryVal ->
                 if (heatBatteryVal == 1f) {
                     binding.battHeat.visibility = View.VISIBLE
-                } else {
+                } else if(binding.battHeat.visibility != View.GONE) {
                     binding.battHeat.visibility = View.GONE
                 }
             }
@@ -912,7 +935,7 @@ class DashFragment : Fragment() {
             it.getValue(Constants.chargeStatus)?.let { chargeStatusVal ->
                 if (chargeStatusVal == Constants.chargeStatusActive) {
                     binding.battCharge.visibility = View.VISIBLE
-                } else {
+                } else if(binding.battCharge.visibility != View.GONE) {
                     binding.battCharge.visibility = View.GONE
                 }
             }

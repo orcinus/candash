@@ -57,6 +57,7 @@
         <entry key="app/src/main/res/drawable/ic_maxspeed.xml" value="0.216" />
         <entry key="app/src/main/res/drawable/ic_maxspeedinactive.xml" value="0.216" />
         <entry key="app/src/main/res/drawable/ic_modely.xml" value="0.216" />
+        <entry key="app/src/main/res/drawable/ic_pin.xml" value="0.1675" />
         <entry key="app/src/main/res/drawable/ic_rearleftdoor.xml" value="0.216" />
         <entry key="app/src/main/res/drawable/ic_rearrightdoor.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_seatbelt.xml" value="0.1825" />
@@ -75,7 +76,7 @@
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_fullscreen.xml" value="0.14537037037037037" />
         <entry key="app/src/main/res/layout/fragment_bs_warning.xml" value="0.14537037037037037" />
-        <entry key="app/src/main/res/layout/fragment_dash.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_dash.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_info.xml" value="0.20087336244541484" />
       </map>
     </option>
